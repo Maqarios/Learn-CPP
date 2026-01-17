@@ -1,15 +1,19 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 class Student
 {
 private:
     std::string m_name;
     int m_id;
+    std::vector<double> grades;
 
 public:
     Student(std::string name, int id);
-    std::string getName();
-    int getId();
+    std::string getName() const;
+    int getId() const;
+    void addGrade(double grade);
+    double getAverage() const;
 };
