@@ -2,6 +2,8 @@
 
 #include <string>
 #include <vector>
+#include <numeric>
+#include <algorithm>
 
 class Student
 {
@@ -14,6 +16,8 @@ public:
     Student(std::string name, int id);
     std::string getName() const;
     int getId() const;
-    void addGrade(double grade);
+    bool addGrade(double grade);
     double getAverage() const;
+    double getMinGrade() const;
+    double getMaxGrade() const;
 };
