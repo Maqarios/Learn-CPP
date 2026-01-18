@@ -15,4 +15,5 @@ public:
     void addStudent(const Student &student);
     void displayRoster() const;
     void saveToFile(const std::string &filename) const;
+    void loadFromFile(const std::string &filename);
 };
