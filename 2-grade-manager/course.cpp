@@ -42,7 +42,8 @@ void Course::loadFromFile(const std::string &filename)
     std::string line;
     while (std::getline(file, line))
     {
-        Student s = Student(line);
+        Student s = Student();
+        s.parseString(line);
         addStudent(s);
     }
 }

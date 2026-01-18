@@ -4,9 +4,8 @@
 #include <sstream>
 #include <iterator>
 
-Student::Student(std::string line)
+Student::Student()
 {
-    parseString(line);
 }
 
 Student::Student(std::string name, int id)

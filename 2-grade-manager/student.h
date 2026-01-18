@@ -11,7 +11,7 @@ private:
     std::vector<double> grades;
 
 public:
-    Student(std::string line);
+    Student();
     Student(std::string name, int id);
     std::string getName() const;
     int getId() const;
