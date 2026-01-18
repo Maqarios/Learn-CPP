@@ -12,6 +12,7 @@ private:
 
 public:
     Course(std::string name);
+    Student *getStudentById(int id);
     void addStudent(const Student &student);
     void displayRoster() const;
     void saveToFile(const std::string &filename) const;

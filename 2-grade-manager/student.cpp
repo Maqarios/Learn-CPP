@@ -1,4 +1,5 @@
 #include "student.h"
+#include <iostream>
 #include <numeric>
 #include <algorithm>
 #include <sstream>
@@ -35,7 +36,10 @@ std::vector<double> Student::getGrades() const
 bool Student::addGrade(double grade)
 {
     if (grade > 100 || grade < 0)
+    {
+        std::cout << "WARNING: Grade must be within 0 and 100!\n";
         return false;
+    }
 
     grades.push_back(grade);
     return true;
@@ -43,16 +47,25 @@ bool Student::addGrade(double grade)
 
 double Student::getAverage() const
 {
+    if (grades.empty())
+        return -1;
+
     return std::accumulate(grades.begin(), grades.end(), 0.0) / grades.size();
 }
 
 double Student::getMinGrade() const
 {
+    if (grades.empty())
+        return -1;
+
     return *std::min_element(grades.begin(), grades.end());
 }
 
 double Student::getMaxGrade() const
 {
+    if (grades.empty())
+        return -1;
+
     return *std::max_element(grades.begin(), grades.end());
 }
 
@@ -77,7 +90,7 @@ void Student::parseString(std::string line)
     std::string temp;
 
     int i = 0;
-    for (char c; ss.get(c);)
+    for (char c; ss >> c;)
     {
         temp += c;
 
