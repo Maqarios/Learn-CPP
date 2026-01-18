@@ -1,4 +1,6 @@
 #include "student.h"
+#include <numeric>
+#include <algorithm>
 
 Student::Student(std::string name, int id)
 {

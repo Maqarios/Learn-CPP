@@ -2,8 +2,6 @@
 
 #include <string>
 #include <vector>
-#include <numeric>
-#include <algorithm>
 
 class Student
 {

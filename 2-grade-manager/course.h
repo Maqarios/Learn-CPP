@@ -1,9 +1,8 @@
 #pragma once
 
-#include <iostream>
+#include "student.h"
 #include <string>
 #include <vector>
-#include "student.h"
 
 class Course
 {
@@ -15,4 +14,5 @@ public:
     Course(std::string name);
     void addStudent(const Student &student);
     void displayRoster() const;
+    void saveToFile(const std::string &filename) const;
 };

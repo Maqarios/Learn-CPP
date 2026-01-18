@@ -1,4 +1,5 @@
 #include "course.h"
+#include <iostream>
 
 Course::Course(std::string name)
 {
