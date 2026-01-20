@@ -13,4 +13,7 @@ public:
     void addTask(const std::string &title, const std::string &desc, Priority p);
     void displayAll() const;
     Task *findTaskById(int id);
+    bool removeTask(int id);
+    bool updateStatus(int id, Status newStatus);
+    bool updatePriority(int id, Priority newPriority);
 };
