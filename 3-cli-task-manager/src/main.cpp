@@ -32,5 +32,17 @@ int main()
     std::cout << "Update Priority(=LOW) & Find by ID(=3):\n  "
               << "  Is success? " << is_success << "\n";
 
+    std::cout << "Filter by Status(=IN_PROGRESS):\n";
+    for (Task t : tm.filterByStatus(Status::IN_PROGRESS))
+        std::cout << "  " << t << "\n";
+
+    std::cout << "Filter by Priority(=LOW):\n";
+    for (Task t : tm.filterByPriority(Priority::LOW))
+        std::cout << "  " << t << "\n";
+
+    std::cout << "Filter by Keyword(=XX):\n";
+    for (Task t : tm.search("XX"))
+        std::cout << "  " << t << "\n";
+
     return 0;
 }

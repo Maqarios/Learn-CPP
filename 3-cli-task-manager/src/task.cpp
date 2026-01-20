@@ -28,13 +28,13 @@ std::string Task::toString() const
     switch (m_status)
     {
     case Status::TODO:
-        output += "todo,";
+        output += "TODO,";
         break;
     case Status::IN_PROGRESS:
-        output += "in_progress,";
+        output += "IN_PROGRESS,";
         break;
     case Status::DONE:
-        output += "done,";
+        output += "DONE,";
         break;
     default:
         throw "unexpected type for status";
@@ -43,13 +43,13 @@ std::string Task::toString() const
     switch (m_priority)
     {
     case Priority::LOW:
-        output += "low";
+        output += "LOW";
         break;
     case Priority::MEDIUM:
-        output += "medium";
+        output += "MEDIUM";
         break;
     case Priority::HIGH:
-        output += "high";
+        output += "HIGH";
         break;
     default:
         throw "unexpected type for priority";

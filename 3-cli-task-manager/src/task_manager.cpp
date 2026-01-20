@@ -57,3 +57,30 @@ bool TaskManager::updatePriority(int id, Priority newPriority)
     it.base()->setPriority(newPriority);
     return true;
 }
+
+std::vector<Task> TaskManager::filterByStatus(Status s) const
+{
+    std::vector<Task> output;
+    std::copy_if(m_tasks.begin(), m_tasks.end(), std::back_inserter(output), [s](const Task &task)
+                 { return task.getStatus() == s; });
+
+    return output;
+}
+
+std::vector<Task> TaskManager::filterByPriority(Priority p) const
+{
+    std::vector<Task> output;
+    std::copy_if(m_tasks.begin(), m_tasks.end(), std::back_inserter(output), [p](const Task &task)
+                 { return task.getPriority() == p; });
+
+    return output;
+}
+
+std::vector<Task> TaskManager::search(const std::string &keyword) const
+{
+    std::vector<Task> output;
+    std::copy_if(m_tasks.begin(), m_tasks.end(), std::back_inserter(output), [keyword](const Task &task)
+                 { return task.getTitle().find(keyword) != std::string::npos || task.getDescription().find(keyword) != std::string::npos; });
+
+    return output;
+}

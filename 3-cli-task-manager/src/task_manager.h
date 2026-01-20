@@ -16,4 +16,7 @@ public:
     bool removeTask(int id);
     bool updateStatus(int id, Status newStatus);
     bool updatePriority(int id, Priority newPriority);
+    std::vector<Task> filterByStatus(Status s) const;
+    std::vector<Task> filterByPriority(Priority p) const;
+    std::vector<Task> search(const std::string &keyword) const;
 };
