@@ -19,4 +19,6 @@ public:
     std::vector<Task> filterByStatus(Status s) const;
     std::vector<Task> filterByPriority(Priority p) const;
     std::vector<Task> search(const std::string &keyword) const;
+    void sortById();
+    void sortByPriority();
 };

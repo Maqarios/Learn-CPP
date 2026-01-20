@@ -44,5 +44,16 @@ int main()
     for (Task t : tm.search("XX"))
         std::cout << "  " << t << "\n";
 
+    tm.addTask("Z", "ZZZZZZZZZZ", Priority::MEDIUM);
+    tm.addTask("A", "AAAAAAAAAA", Priority::HIGH);
+
+    tm.sortByPriority();
+    std::cout << "Sort by Priority:\n";
+    tm.displayAll();
+
+    tm.sortById();
+    std::cout << "Sort by ID:\n";
+    tm.displayAll();
+
     return 0;
 }

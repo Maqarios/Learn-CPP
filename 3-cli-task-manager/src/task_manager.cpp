@@ -84,3 +84,17 @@ std::vector<Task> TaskManager::search(const std::string &keyword) const
 
     return output;
 }
+
+void TaskManager::sortById()
+{
+    std::sort(m_tasks.begin(), m_tasks.end(),
+              [](const Task &a, const Task &b)
+              { return a.getId() < b.getId(); });
+}
+
+void TaskManager::sortByPriority()
+{
+    std::sort(m_tasks.begin(), m_tasks.end(),
+              [](const Task &a, const Task &b)
+              { return a.getPriority() > b.getPriority(); });
+}
