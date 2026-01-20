@@ -57,3 +57,14 @@ std::string Task::toString() const
 
     return output;
 }
+
+std::ostream &operator<<(std::ostream &stream, const Task &task)
+{
+    stream << task.toString();
+    return stream;
+}
+
+bool Task::operator==(const Task &other) const
+{
+    return m_id == other.getId();
+}

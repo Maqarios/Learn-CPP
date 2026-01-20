@@ -38,4 +38,6 @@ public:
     void setStatus(Status status);
     void setPriority(Priority priority);
     std::string toString() const;
+    friend std::ostream &operator<<(std::ostream &stream, const Task &task);
+    bool operator==(const Task &other) const;
 };
