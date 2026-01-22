@@ -21,9 +21,13 @@ void Task::setDescription(std::string description) { m_description = description
 void Task::setStatus(Status status) { m_status = status; }
 void Task::setPriority(Priority priority) { m_priority = priority; }
 
-std::string Task::toString() const
+std::string Task::toString(bool is_id_included) const
 {
-    std::string output = std::to_string(m_id) + "," + m_title + "," + m_description + ",";
+    std::string output;
+    if (is_id_included)
+        output += std::to_string(m_id) + "," + m_title + "," + m_description + ",";
+
+    output += m_title + "," + m_description + ",";
 
     switch (m_status)
     {

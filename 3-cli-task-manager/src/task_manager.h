@@ -21,4 +21,7 @@ public:
     std::vector<Task> search(const std::string &keyword) const;
     void sortById();
     void sortByPriority();
+    void saveToFile(const std::string &filename) const;
+    void parseLineToTask(const std::string line);
+    void loadFromFile(const std::string &filename);
 };

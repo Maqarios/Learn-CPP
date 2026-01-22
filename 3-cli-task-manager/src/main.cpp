@@ -5,6 +5,14 @@
 int main()
 {
     TaskManager tm;
+    try
+    {
+        tm.loadFromFile("Task Manager Data.txt");
+    }
+    catch (char const *msg)
+    {
+        std::cout << "ERROR: " << msg << "!\n";
+    }
 
     tm.addTask("X", "XXXXXXXXXX", Priority::LOW);
     tm.addTask("Y", "YYYYYYYYYY", Priority::MEDIUM);
@@ -54,6 +62,15 @@ int main()
     tm.sortById();
     std::cout << "Sort by ID:\n";
     tm.displayAll();
+
+    try
+    {
+        tm.saveToFile("Task Manager Data.txt");
+    }
+    catch (char const *msg)
+    {
+        std::cout << "ERROR: " << msg << "!\n";
+    }
 
     return 0;
 }

@@ -37,7 +37,7 @@ public:
     void setDescription(std::string description);
     void setStatus(Status status);
     void setPriority(Priority priority);
-    std::string toString() const;
+    std::string toString(bool is_id_included = true) const;
     friend std::ostream &operator<<(std::ostream &stream, const Task &task);
     bool operator==(const Task &other) const;
 };
